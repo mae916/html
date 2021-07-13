@@ -1,0 +1,199 @@
+21.07.02
+
+	*block: 줄개행을 하는 태그(공간)
+		너비와 높이
+		여백(상하좌우)
+		내부,외부여백
+
+	*inline: 줄개행X (글,문장)
+		너비와 높이X
+		여백(내부여백 - 상하좌우, 외부여백 - 좌,우)
+		
+		div
+		span
+		
+	* 주석: 내용 미노출, 태그나 영역에 대한 설명
+			<!-- 주석 내용-->
+			
+	*table: 표를 구성할때
+	
+	*리스트: 목록
+		-순서가 있는 목록
+		<ol>  ; ordered list
+			<li>목록1</li>
+			<li>목록2</li>
+		</ol>
+		
+		-순서가 없는 목록
+		<ul>  ;unordered list
+			<li>목록1</li>
+			<li>목록2</li>
+		</ul>  
+		
+		<dl>
+			<dt>항목명</dt>
+			<dd>항목설명<dd>
+		</dl>  ;쇼핑몰 같은곳에서 많이 쓰임
+		
+		*img: 이미지를 불러요는 태그
+		<img src="이미지 경로">
+		
+		*경로
+		-절대 경로
+			D:\html\img\banner2.jpg
+			
+		-상대 경로 : 현재 파일이 위치한 경로 기준으로 상대적인 경로
+			img/banner1.jpg
+			
+			https://swiperjs.com/
+			
+			http://yonggyo.com:3001/
+			http://yonggyo.com:3001/board/list/notice
+			
+			git pull
+			git add .
+			git commit -m "확정 메세지"
+			git push 
+
+21.07.05
+
+ 	강사님 github 수업때 실습한거 틀린거 확인해보기
+	https://github.com/yonggyo1981
+	-html2
+
+*양식태그
+<form>
+	데이터입력
+	<input type=''>
+</form>
+
+*form	
+	*method: 양식의 데이터를 전송하는 방식
+		-GET
+		;URL 형태로 전송이 되는 데이터(브라우저 주소창에 노출)
+		브라우저 주소창에 입력하는 문자 갯수의 제한
+		 (전송할 데이터의 용량이 제한이 있다.)
+		-POST
+		;브라우저 주소창에 노출이 되지 않는 데이터
+		내부적으로 처리 (용량의 제한이 비교적 덜 하다.)
+		많은 데이터 전송 시 사용
+		ex)파일을 전송 시 enctype="multitype/form-data"
+	
+	*action - 양식 데이터를 전송할 URL
+	target - 전송할 창
+		   _self 현재 창(기본값)
+		   _blank 새 창
+		    내부창의 name 값
+		     내부 창은 같은 페이지 하부의 iframe 태그
+	enctype: 파일을 업로드 할때
+	
+	EX)	
+	GET-
+	http://yonggyo.com/~webclass/?    -->여기서 '?'는 '쿼리스트링'이라고 함
+	text=sdfsdf&
+	checkbox=on&
+	password=12345&
+	email=asfasdf%40asdasdf.com&
+	number=1234&
+	range=26&
+	color=%23933e3e&
+	date=2021-07-05&
+	textarea=dgasdfasdfasdf&
+	select=%EC%84%A0%ED%83%9D1&
+	flower=%EC%BD%94%EC%8A%A4%EB%AA%A8%EC%8A%A4
+	
+	POST-
+	http://yonggyo.com/~webclass/
+	
+	
+	input, select, textarea
+	데이터를 찾을 수 있는 속성 - name
+	기본값을 지정하는 속성 - value
+	
+	radio와 checked -> 값을 선택하는 속성(체크가 되어 있음) checked
+	select에서 값을 선택하는 속성 ->selected (option 태그에 정의)
+	
+	textarea
+	-rows 영역을 몇 줄만큼 늘릴것인지
+	-cols 영역을 몇 칸만큼 늘릴것인지
+	회원가입 양식
+	
+	input
+		type - 버튼관련 타임
+		submit(양식제출) / button(일반버튼) / reset(양식 취소)
+	
+	placeholder - 안내문구
+	
+	align - 가로정렬 (left right center)
+	valign - 수직정렬 (top middle bottom)
+	
+	&nbsp;  ->공백1개
+	&amp;   ->&
+	&It;  -> <
+	&gt;  -> >
+	
+	리스트 태그
+	ul - unordered list
+	ol - ordered lis
+	dl - dt, dd
+	
+	img
+	src 이미지 경로
+	alt alternative (대체 설명)
+	
+	body
+	
+	bgcolor 전체 배경색
+	text 글꼴색
+	link a 태그 링크 이동후 색상
+	vlink a 태그를 클릭할때 색상
+	
+	../  ->상위폴더 이동
+	
+	form 양식, 신청서
+	
+	form태그의 그룹화 태그
+	<fieldset>
+	<legend></legend>
+	</fieldset>
+	
+	*<label></label> 써주는 2가지 방식
+	1)
+	<label>
+	<input type='checkbox' name='hobby' value='수영'>
+	수영
+	</label>
+	<label>
+	<input type='checkbox' name='hobby' value='축구'>
+	축구
+	</label>
+
+	2)
+	<input type='checkbox' name='hobby' value='수영' id='hobby1'>
+	<label for='hobby1'>수영</label>
+	<input type='checkbox' name='hobby' value='축구' id='hobby2'>
+	<label for='hobby2'>축구</label>
+	
+	<datalist>
+	
+	radio 2중1
+	checkbox 다중선택
+	이거 할때 꼭 label 써주기
+	
+	multiple- 여러개 선택가능
+	size 한번에 노출할 갯수	
+	
+	콤보박스 select
+	특정 option 을 선택할때 - selected
+	
+	type
+	-submit: 양식 제출 버튼 value='버튼명'  닫힘 태그 없음.
+	-reset: 양식 취소 버튼 value='버튼명'
+	-button: 일반적인 버튼<botton>버튼명</button>
+	-image - 제출버튼(이미지 제출버튼 - submit과 동일한 기능)
+		+src 속성 ->이미지 경로
+		<input type='image' value=''>
+	
+	
+
+			
